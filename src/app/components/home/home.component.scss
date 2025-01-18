@@ -1,0 +1,59 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/_variables.scss";
+
+
+.home-container {
+    @include background('/background.jpg', 90vh);
+    @include justifyCenter(5rem);
+
+    img {
+        width: 38rem;
+    }
+    
+    .home-content {
+        .fullstack-title {
+            font-size: 64px;
+        }
+    
+        .developer-title {
+            font-size: 96px;
+            @include textGradient;
+        }
+
+        p {
+            width: 37rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+
+            span {
+                @include textGradient;
+                font-size: 18px;
+            }
+        }
+
+    }
+
+    .social-icons {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1.25rem;
+
+        a {
+            background-color: #000;
+            padding: .6rem .8rem;
+            border-radius: 5px;
+            box-shadow: 0 0 30px 1px #fff;
+            transition: 1s;
+            @include borderStyle;
+
+            i {
+                font-size: 32px;
+            }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+        }
+    }
+   
+}

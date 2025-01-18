@@ -1,0 +1,48 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/_variables.scss";
+
+
+.contact-container {
+    @include background('/background-inverted.jpg', 100vh);
+
+    h1 {
+        @include textGradient;
+        text-align: center;
+        font-size: 48px;
+        padding-top: 6rem;
+    }
+
+    .getintouch-content {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+
+        h2 {
+            @include textGradient;
+        }
+
+        p {
+            color: $greyColor;
+            margin-top: 1rem;
+        }
+
+        .input-wrapper {
+            @include justifyCenter(.5rem);
+            background-color: rgba(255, 255, 255, 0.2);;
+            border-radius: .25rem;
+            padding: .75rem;
+            color: $greyColor;
+            margin-top: 1rem;
+
+            i {
+                color: $greyColor;
+            }
+
+            input {
+                border: none;
+                width: 100%;
+                background-color: transparent;
+            }
+        }
+    }
+}

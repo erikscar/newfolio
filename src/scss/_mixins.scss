@@ -1,0 +1,74 @@
+@mixin background($path, $height) {
+    background-image: url($path);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: $height;
+}
+
+@mixin justifyCenter($gap) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin textGradient {
+    background: linear-gradient(90deg, #5829D6 25%, #E75E98 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin borderStyle {
+    border: none;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $gradient;
+        z-index: -1; 
+        border-radius: inherit; 
+        padding: 1px; 
+        transition: all 0.4s ease-in-out; 
+        background-size: 200% 200%; 
+        animation: border-animate 3s linear infinite; 
+      }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background: #000; 
+        z-index: -1;
+        border-radius: inherit;
+      }
+    
+    &:hover {
+        transform: scale(1.05);
+        &::before {
+          background: #e75e98;
+          animation: none;
+        }
+      }
+    
+@keyframes border-animate {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
