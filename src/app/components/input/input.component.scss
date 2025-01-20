@@ -1,0 +1,23 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+
+.input-wrapper {
+    @include justifyCenter(.75rem);
+    background-color: rgba(255, 255, 255, 0.2);;
+    border-radius: .25rem;
+    padding: .75rem;
+    color: $greyColor;
+    margin: .75rem 0;
+    
+    i {
+        color: $greyColor;
+    }
+
+    input {
+        border: none;
+        width: 100%;
+        background-color: transparent;
+        outline: none;
+    }
+}

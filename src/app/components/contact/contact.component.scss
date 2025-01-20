@@ -10,39 +10,118 @@
         text-align: center;
         font-size: 48px;
         padding-top: 6rem;
+
     }
 
-    .getintouch-content {
-        display: inline-block;
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 2rem;
+    .contact-container-wrapper {
+        @include justifyCenter(1rem);
+        margin-top: 2rem;
 
-        h2 {
-            @include textGradient;
-        }
+        .getintouch-content {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: .5rem;
 
-        p {
-            color: $greyColor;
-            margin-top: 1rem;
-        }
-
-        .input-wrapper {
-            @include justifyCenter(.5rem);
-            background-color: rgba(255, 255, 255, 0.2);;
-            border-radius: .25rem;
-            padding: .75rem;
-            color: $greyColor;
-            margin-top: 1rem;
-
-            i {
+            h2 {
+                @include textGradient;
+            }
+    
+            .getintouch-paragraph {
                 color: $greyColor;
+                margin-top: 1rem;
             }
 
-            input {
-                border: none;
-                width: 100%;
-                background-color: transparent;
+            .contact-content-wrapper {
+                @include justifyCenter(0);
+
+                .contact-content {
+                    text-align: center;
+                    display: inline-block;
+                    padding: 1rem 1.5rem;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    border-radius: .5rem;
+
+                    p {
+                        margin-top: .5rem;
+                        font-size: 16px;
+                    }
+
+                    .contact-icons {
+                        @include justifyCenter(1.5rem);
+                        font-size: 42px;
+                        margin-top: 2.5rem;
+
+                        .contact-icon-wrapper {
+                            @include borderStyle;
+                            padding: .5rem .75rem;
+                            
+                        }
+                    }
+                }
             }
+        }
+        
+        .comments-content {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: .5rem;
+            width: 50rem;
+
+            .comments-title-wrapper {   
+                @include justifyCenter(1rem);
+                @include textGradient;
+                font-size: 32px;
+                justify-content: flex-start;
+                margin-bottom: 1rem;
+            }
+
+            label {
+                display: inline-block;
+                margin: 1.25rem 0 .5rem 0;
+            }
+
+            .profile-photo {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: .5rem;
+                padding: 1rem;
+
+                .profile-photo-wrapper {
+                    @include justifyCenter(.5rem);
+                    
+                    p,i {
+                        color: #e75e98;
+                    }
+                }
+            }
+
+            .comments-container {
+                @include justifyCenter(0);
+                justify-content: space-between;
+                background-color: rgba(255, 255, 255, 0.2);
+                padding: 1rem;
+                margin-top: 1rem;
+                border-radius: .5rem;
+
+                p {
+                    color: $greyColor;
+                }
+                .comment {
+                    @include justifyCenter(1rem);
+                    justify-content: flex-start;
+
+                    i {
+                        font-size: 30px;
+                    }
+                }
+            }
+          
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: none;
+            border-top: .5px solid $greyColor ;
         }
     }
 }

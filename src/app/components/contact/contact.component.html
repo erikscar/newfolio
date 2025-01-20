@@ -1,42 +1,66 @@
     <div class="contact-container">
         <h1>Contato</h1>
-        <div class="getintouch-content">
-            <h2>Entre em Contato</h2>
-            <p>Tem algo para discutir? Me mande uma mensagem por email e vamos conversar.</p>
-
-            <div class="input-wrapper">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Seu Nome">
-            </div>
-
-            <div class="input-wrapper">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="text" placeholder="Seu Email">
-            </div>
-
-            <div class="input-wrapper">
-                <i class="fa-solid fa-message"></i>
-                <input type="text" placeholder="Sua Mensagem">
-            </div>
-            
+        <div class="contact-container-wrapper">
+            <div class="getintouch-content">
+                <h2>Entre em Contato</h2>
+                <p class="getintouch-paragraph">Tem algo para discutir? Me mande uma mensagem por email.</p>
+                
+                <app-input icon="fa-solid fa-user"  placeholder="Seu Nome"></app-input>
+                <app-input icon="fa-solid fa-envelope" placeholder="Seu Email"></app-input>
+                <app-input icon="fa-solid fa-message" placeholder="Sua mensagem"></app-input>
                 <app-button [width]="'100%'" text="Enviar" icon="fa-solid fa-paper-plane" class="test"></app-button>
-
-            <div>
-
-            </div>
-
-            <div>
-                <p>erikscarcela&#64;gmail.com</p>
-                <p>+55 (11) 94008-0990</p>
-
-                <div>
-                    <div>
-                        <i class="fa-brands fa-github"></i>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-linkedin"></i>
+                
+                <hr>
+                <div class="contact-content-wrapper">
+                    <div class="contact-content">
+                        <p>erikscarcela&#64;gmail.com</p>
+                        <p>+55 (11) 94008-0990</p>
+                        <div class="contact-icons">
+                            <div class="contact-icon-wrapper">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div class="contact-icon-wrapper">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="comments-content">
+                <div class="comments-title-wrapper">
+                    <i class="fa-solid fa-comments"></i>
+                    <h2>Comentários</h2>
+                </div>
+
+                <label for="">Nome</label>
+                <app-input icon="fa-solid fa-user" placeholder="Seu Nome" [margin]="'0'"></app-input>
+
+                <label for="">Mensagem</label>
+                <app-input icon="fa-solid fa-message" placeholder="Escreva sua Mensagem Aqui..." [margin]="'0'"></app-input>  
+                
+                <label for="">Foto de Perfil</label>
+                <div class="profile-photo">
+                    <div class="profile-photo-wrapper">
+                        <i class="fa-solid fa-image"></i>
+                        <p>Escolher Foto</p>
+                    </div>
+                </div>
+
+                <app-button [width]="'100%'" icon="fa-solid fa-paper-plane" text="Postar Comentário"></app-button>
+                <hr>
+
+                <div class="comments-container">
+                    <div class="comment">
+                        <i class="fa-solid fa-user"></i>
+                        <div>
+                            <h3>Erik</h3>
+                            <p>Bom Trabalho! Excelente!</p>
+                        </div>
+                    </div>
+                    <p>1 Hora Atrás</p>
+                </div>
+            </div>
         </div>
+        
     </div>
