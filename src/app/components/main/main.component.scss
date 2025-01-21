@@ -1,6 +1,9 @@
 @import "../../../scss/mixins.scss";
 @import '../../../scss/variables.scss';
 
+html {
+  scroll-behavior: smooth;
+}
 header {
     height: 10vh;
     width: 100%;
@@ -9,7 +12,7 @@ header {
     justify-content: space-around;
     gap: 27rem;
     align-items: center;
-    
+    position: fixed;
     img {
        width: 3.5rem; 
     }
@@ -24,7 +27,8 @@ header {
             font-size: 20px;
             position: relative;
             display: inline-block;
-
+            cursor: pointer;
+            
             &::after {
                 content: '';
                 position: absolute;
@@ -42,6 +46,11 @@ header {
               &:hover::after {
                 transform: scaleX(1); 
                 animation: border-animate 5s linear infinite; 
+              }
+
+              &.active::after {
+                transform: scaleX(1); 
+                animation: none; 
               }
             }
             

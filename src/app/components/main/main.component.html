@@ -1,12 +1,20 @@
 <header>
     <img src="/logo.png" alt="logo">
     <nav>
-        <a routerLink=[] fragment="home">Home</a>
-        <a routerLink=[] fragment="aboutme">Sobre</a>
-        <a routerLink=[] fragment="portfolio">Portfólio</a>
-        <a routerLink=[] fragment="contact">Contato</a>
+        <a href="#home-container"
+        [class.active] ="activeSection === 'home-container'">Home</a>
+
+        <a href="#aboutme-container"
+        [class.active] ="activeSection === 'aboutme-container'">Sobre</a>
+
+        <a href="#portfolio-container"
+        [class.active] ="activeSection === 'portfolio-container'">Portfólio</a>
+
+        <a href="#contact-container"
+        [class.active] ="activeSection === 'contact-container'">Contato</a>
     </nav>
 </header>
+
 <app-home></app-home>
 <app-aboutme></app-aboutme>
 <app-portfolio></app-portfolio>

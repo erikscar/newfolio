@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss'
 })
+
 export class ButtonComponent {
   @Input() text: string = "";
   @Input() icon: string = "";

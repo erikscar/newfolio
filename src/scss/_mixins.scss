@@ -1,10 +1,11 @@
-@mixin background($path, $height) {
-    background-image: url($path);
-    background-repeat: no-repeat;
-    background-size: cover;
+@mixin background() {
+    // background-image: url($path);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    background: radial-gradient(ellipse 40% 45% at center, #82454e, #180824);
     width: 100%;
-    height: $height;
-}
+    height: 100vh;
+  }
 
 @mixin justifyCenter($gap) {
   display: flex;

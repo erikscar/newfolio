@@ -60,7 +60,7 @@ header {
 
 
 .project-container {
-    @include background('/background.jpg', 100vh);
+    @include background();
 
     .project-container-wrapper {
         @include justifyCenter(3rem);

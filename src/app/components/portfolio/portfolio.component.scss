@@ -1,7 +1,7 @@
 @import "../../../scss/mixins";
 
-.portfolio-container {
-    @include background('/background.jpg', 100vh);
+#portfolio-container {
+    @include background();
 
    
     h1 {

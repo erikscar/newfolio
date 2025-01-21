@@ -2,8 +2,8 @@
 @import "../../../scss/variables";
 
 
-.aboutme-container {
-    @include background('/background-inverted.jpg', 100vh);
+#aboutme-container {
+    @include background();
 
     h1 {
         text-align: center;

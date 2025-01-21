@@ -2,8 +2,8 @@
 @import "../../../scss/_variables.scss";
 
 
-.contact-container {
-    @include background('/background-inverted.jpg', 100vh);
+#contact-container {
+    @include background();
 
     h1 {
         @include textGradient;
@@ -123,5 +123,23 @@
             border: none;
             border-top: .5px solid $greyColor ;
         }
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 3rem;
+
+        hr {
+            margin: 0 auto;
+            width: 90%;
+            border: none;
+            border-top: .5px solid $greyColor ;
+        }
+
+        p {
+            margin-top: 2rem;
+            color: $greyColor;
+        }
+        
     }
 }

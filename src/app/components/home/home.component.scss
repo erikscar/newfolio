@@ -2,8 +2,12 @@
 @import "../../../scss/_variables.scss";
 
 
-.home-container {
-    @include background('/background.jpg', 90vh);
+#home-container {
+    @include background();
+
+    
+       
+    height: 100vh;
     @include justifyCenter(5rem);
 
     img {
