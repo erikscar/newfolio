@@ -5,10 +5,23 @@
                 <h2>Entre em Contato</h2>
                 <p class="getintouch-paragraph">Tem algo para discutir? Me mande uma mensagem por email.</p>
                 
-                <app-input icon="fa-solid fa-user"  placeholder="Seu Nome"></app-input>
-                <app-input icon="fa-solid fa-envelope" placeholder="Seu Email"></app-input>
-                <app-input icon="fa-solid fa-message" placeholder="Sua mensagem"></app-input>
-                <app-button [width]="'100%'" text="Enviar" icon="fa-solid fa-paper-plane" class="test"></app-button>
+                <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input formControlName="from_name" type="text" placeholder="Seu Nome">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input formControlName="from_email" type="text" placeholder="Seu Email">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-message"></i>
+                        <input formControlName="message" type="text" placeholder="Sua Mensagem">
+                    </div>
+                    <button type="submit" style="width: 100%;">Enviar </button>
+                </form>
                 
                 <hr>
                 <div class="contact-content-wrapper">

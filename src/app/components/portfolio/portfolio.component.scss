@@ -2,7 +2,6 @@
 
 #portfolio-container {
     @include background();
-
    
     h1 {
         text-align: center;
@@ -32,10 +31,41 @@
             padding: .5rem 0;
             border-radius: 1rem;
             font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: .5s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        .btnActive {
+            @include borderStyle;
+            background-color: rgba(255, 255, 255, 0.2);
+            animation: pulse 2s ease-in-out infinite;
         }
     }
 
-    .portfolio-card-container {
-        @include justifyCenter(1rem);
+    .portfolio-card-container,
+    .techs-card-container {
+        @include justifyCenter(2rem);  
+    }
+    .techs-card-container {
+        flex-wrap: wrap;
+        margin: 4rem auto;
+        max-width: 80rem;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
     }
 }

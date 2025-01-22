@@ -1,22 +1,40 @@
 <div id="portfolio-container">
     <h1>Apresentação do Portfólio</h1>
+
     <p class="portfolio-description">
-        Explore minha jornada de projetos e habilidades! Cada parte desta seção reflete meu percurso de aprendizado e evolução, destacando eus conhecimentos adquiridos ao longo do tempo.
+        Explore minha jornada de projetos e habilidades! Cada parte desta seção reflete meu percurso de aprendizado e evolução, destacando meus conhecimentos adquiridos ao longo do tempo.
     </p>
 
     <div class="portfolio-switcher">
-        <div class="portfolio-switch-card">
+        <button class="portfolio-switch-card" (click)="switcher = 'projects'" [ngClass]="switcher === 'projects' ?  'btnActive': ''">
             <i class="fa-solid fa-code"></i>            
             <p>Projetos</p>
-        </div>
-        <div class="portfolio-switch-card">
+        </button>
+        <button class="portfolio-switch-card" (click)="switcher = 'techs'" [ngClass]="switcher === 'techs' ? 'btnActive': ''">
             <i class="fa-solid fa-microchip"></i>
             <p>Tecnologias</p>
+        </button>   
+    </div>
+
+        <div class="portfolio-card-container" *ngIf="switcher === 'projects'; else technologies">
+            <app-portfolio-card></app-portfolio-card>
+            <app-portfolio-card></app-portfolio-card>
+            <app-portfolio-card></app-portfolio-card>
         </div>
-    </div>
-    <div class="portfolio-card-container">
-        <app-portfolio-card></app-portfolio-card>
-        <app-portfolio-card></app-portfolio-card>
-        <app-portfolio-card></app-portfolio-card>
-    </div>
+        <ng-template #technologies>
+            <div class="techs-card-container">
+                <app-tech-card techName="HTML5" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"></app-tech-card>
+                <app-tech-card techName="CSS3" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"></app-tech-card>
+                <app-tech-card techName="JavaScript" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"></app-tech-card>
+                <app-tech-card techName="SAAS" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"></app-tech-card>
+                <app-tech-card techName="Bootstrap" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"></app-tech-card>
+                <app-tech-card techName="ReactJS" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"></app-tech-card>
+                <app-tech-card techName="AngularJS" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"></app-tech-card>
+                <app-tech-card techName="NodeJS" techImgLink="https://img.icons8.com/fluent/512/node-js.png"></app-tech-card>
+                <app-tech-card techName="ExpressJS" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"></app-tech-card>
+                <app-tech-card techName="C#" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"></app-tech-card>
+                <app-tech-card techName="MongoDB" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"></app-tech-card>
+                <app-tech-card techName="MySQL" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"></app-tech-card>
+            </div>
+        </ng-template>
 </div>
