@@ -1,1 +1,8 @@
-<button [ngStyle]="{ width: width }"><i [class]="icon_left"></i>{{ text }} <i [class]="icon"></i></button>
+<a 
+    [attr.href] = "href"
+    [ngStyle]="{ width: width }">
+    <i [class]="icon_left"></i>
+    {{ text }} 
+    <i [class]="icon"></i>
+</a>
+    

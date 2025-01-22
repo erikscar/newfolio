@@ -14,4 +14,5 @@ export class ButtonComponent {
   @Input() icon: string = "";
   @Input() icon_left: string = "";
   @Input() width: string = "";
+  @Input() href: string = "";
 }
