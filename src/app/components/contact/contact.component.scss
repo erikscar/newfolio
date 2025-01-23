@@ -10,7 +10,6 @@
         text-align: center;
         font-size: 48px;
         padding-top: 6rem;
-
     }
 
     .contact-container-wrapper {
@@ -33,23 +32,28 @@
             }
 
             
-.input-wrapper {
+    .input-wrapper {
     @include justifyCenter(.75rem);
+    align-items: flex-start;
+
     background-color: rgba(255, 255, 255, 0.2);;
     border-radius: .25rem;
     padding: .75rem;
-    color: $greyColor;
     margin: .75rem 0;
     
     i {
         color: $greyColor;
     }
 
-    input {
+    textarea, input {
         border: none;
         width: 100%;
         background-color: transparent;
         outline: none;
+
+        &::placeholder{
+            color: $greyColor;
+        }
     }
 }
 
@@ -99,17 +103,41 @@
 
             label {
                 display: inline-block;
-                margin: 1.25rem 0 .5rem 0;
+                margin: .75rem 0 0 0;
+            }
+
+            .input-wrapper {
+                @include justifyCenter(.75rem);
+                align-items: flex-start;
+                background-color: rgba(255, 255, 255, 0.2);;
+                border-radius: .25rem;
+                padding: .75rem;
+                margin: .5rem 0;
+                
+                i {
+                    color: $greyColor;
+                }
+            
+                textarea, input {
+                    border: none;
+                    width: 100%;
+                    background-color: transparent;
+                    outline: none;
+
+                    &::placeholder{
+                        color: $greyColor;
+                    }
+                }
             }
 
             .profile-photo {
                 background-color: rgba(255, 255, 255, 0.2);
                 border-radius: .5rem;
                 padding: 1rem;
+                margin-top: .5rem;
 
                 .profile-photo-wrapper {
                     @include justifyCenter(.5rem);
-                    
                     p,i {
                         color: #e75e98;
                     }
@@ -127,6 +155,7 @@
                 p {
                     color: $greyColor;
                 }
+
                 .comment {
                     @include justifyCenter(1rem);
                     justify-content: flex-start;

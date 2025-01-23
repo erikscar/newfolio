@@ -8,7 +8,7 @@
                 <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
                     <div class="input-wrapper">
                         <i class="fa-solid fa-user"></i>
-                        <input formControlName="from_name" type="text" placeholder="Seu Nome">
+                        <input formControlName="from_name" type="text" placeholder="Seu Nome" class="teste">
                     </div>
 
                     <div class="input-wrapper">
@@ -18,9 +18,10 @@
 
                     <div class="input-wrapper">
                         <i class="fa-solid fa-message"></i>
-                        <input formControlName="message" type="text" placeholder="Sua Mensagem">
+                        <textarea rows="4" formControlName="message"  placeholder="Sua Mensagem"></textarea>
                     </div>
-                    <button type="submit" style="width: 100%;">Enviar </button>
+                    
+                    <app-common-button type="submit" text="Enviar Mensagem" icon="fa-solid fa-paper-plane"></app-common-button>
                 </form>
                 
                 <hr>
@@ -47,10 +48,16 @@
                 </div>
 
                 <label for="">Nome</label>
-                <app-input icon="fa-solid fa-user" placeholder="Seu Nome" [margin]="'0'"></app-input>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user"></i>
+                    <input  type="text" placeholder="Seu Nome">
+                </div>
 
                 <label for="">Mensagem</label>
-                <app-input icon="fa-solid fa-message" placeholder="Escreva sua Mensagem Aqui..." [margin]="'0'"></app-input>  
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-message"></i>
+                    <textarea rows="4"  placeholder="Escreva sua Mensagem Aqui..."></textarea>
+                </div>
                 
                 <label for="">Foto de Perfil</label>
                 <div class="profile-photo">
@@ -60,7 +67,7 @@
                     </div>
                 </div>
 
-                <app-button [width]="'100%'" icon="fa-solid fa-paper-plane" text="Postar Comentário"></app-button>
+                <app-common-button type="submit" text="Postar Comentário" icon="fa-solid fa-paper-plane"></app-common-button>
                 <hr>
 
                 <div class="comments-container">

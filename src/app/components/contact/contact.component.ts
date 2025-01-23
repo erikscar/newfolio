@@ -4,11 +4,12 @@ import { InputComponent } from "../input/input.component";
 import emailjs from '@emailjs/browser'
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { CommonButtonComponent } from "../common-button/common-button.component";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ButtonComponent, InputComponent, CommonModule, ReactiveFormsModule],
+  imports: [ButtonComponent, InputComponent, CommonModule, ReactiveFormsModule, CommonButtonComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
   })
@@ -29,8 +30,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
       message: this.form.value.message,
       });
 
-      alert("CERTO")
+      alert("Mensagem Enviada")
       this.form.reset()
   }
-  
 }
