@@ -17,10 +17,19 @@
     </div>
 
         <div class="portfolio-card-container" *ngIf="switcher === 'projects'; else technologies">
-            <app-portfolio-card></app-portfolio-card>
+            <app-portfolio-card 
+            name="SwiftCart"
+            description="E-commerce simulation project using ReactJS for the user interface, JavaScript for dynamic functionalities, NodeJS for the backend, ExpressJS for the web server and MySQL..."
+            techsQuantity="5"
+            featuresQuantity="5"
+            [techs]="['Batata','Maçã']"
+            [features]="['Batata', 'Maçã']">
+        </app-portfolio-card>
+
             <app-portfolio-card></app-portfolio-card>
             <app-portfolio-card></app-portfolio-card>
         </div>
+
         <ng-template #technologies>
             <div class="techs-card-container">
                 <app-tech-card techName="HTML5" techImgLink="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"></app-tech-card>

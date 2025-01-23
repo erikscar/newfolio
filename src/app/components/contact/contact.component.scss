@@ -177,17 +177,16 @@
 
     .copyright {
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 1rem;
 
         hr {
-            margin: 0 auto;
+            margin: 2rem auto 1rem auto;
             width: 90%;
             border: none;
             border-top: .5px solid $greyColor ;
         }
 
         p {
-            margin-top: 2rem;
             color: $greyColor;
         }
         

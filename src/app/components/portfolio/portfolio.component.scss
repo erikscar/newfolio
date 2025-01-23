@@ -24,10 +24,10 @@
         padding: 1.25rem;
         border-radius: .5rem;
 
-        .portfolio-switch-card {
+        .portfolio-switch-card, .btnActive {
             text-align: center;
             background-color: rgba(255, 255, 255, 0.2);
-            width: 40%;
+            width: 45%;
             padding: .5rem 0;
             border-radius: 1rem;
             font-size: 20px;
@@ -35,21 +35,38 @@
             cursor: pointer;
             transition: .5s;
 
-            &:hover {
-                transform: scale(1.05);
-            }
         }
 
         .btnActive {
-            @include borderStyle;
+            @include animatedGradientButton;
+            padding: .5rem 0;
+            border-radius: 1rem;
             background-color: rgba(255, 255, 255, 0.2);
-            animation: pulse 2s ease-in-out infinite;
         }
     }
 
     .portfolio-card-container,
     .techs-card-container {
         @include justifyCenter(2rem);  
+    }
+
+    .portfolio-card-container{
+        button {
+            @include textGradient;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: 1s;
+            i {
+                font-size: 40px;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        
+
     }
     .techs-card-container {
         flex-wrap: wrap;
@@ -58,14 +75,4 @@
     }
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+

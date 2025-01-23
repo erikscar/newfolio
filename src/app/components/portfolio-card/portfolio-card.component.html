@@ -1,11 +1,14 @@
 <div class="portfolio-card">
     <div class="img-wrapper"><img src="/swift.jpg" alt=""></div>
-    <h1>Swift Cart</h1>
-    <p>
-        E-commerce simulation project using ReactJS for the user interface, JavaScript for dynamic functionalities, NodeJS for the backend, ExpressJS for the web server and MySQL...
-    </p>
+    <h1>{{name}}</h1>
+    <p>{{description}}</p>
     <div class="portfolio-card-links">
-        <a href="">Ver Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        <app-button text="Detalhes" icon="fa-solid fa-arrow-right"></app-button>
+        <a>Ver Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <app-button 
+        link="/project" 
+        [queryParams]="{name, description, techsQuantity, featuresQuantity, techs: techs.join(','), features: features.join(',')}" 
+        text="Detalhes" 
+        icon="fa-solid fa-arrow-right">
+    </app-button>
     </div>
 </div>

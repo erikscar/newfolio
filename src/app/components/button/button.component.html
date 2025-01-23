@@ -1,6 +1,10 @@
 <a 
     [attr.href] = "href"
-    [ngStyle]="{ width: width }">
+    [ngStyle]="{ width: width }"
+    [className]="className"
+    [routerLink]="link"
+    [queryParams]="queryParams"
+    >
     <i [class]="icon_left"></i>
     {{ text }} 
     <i [class]="icon"></i>

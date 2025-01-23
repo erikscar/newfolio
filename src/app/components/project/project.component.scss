@@ -70,9 +70,10 @@ header {
             justify-content: flex-start;
             align-items: center;
 
-            button {
+            a {
                 @include borderStyle;
                 border: none;
+                color: #fff;
                 font-size: 16px;
                 padding: .5rem 2rem;
                 margin-right: 1rem;

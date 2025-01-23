@@ -13,29 +13,29 @@
     <div class="project-container-wrapper">
         <div class="project-info">
             <div class="project-path">
-                <button><i class="fa-solid fa-arrow-left"></i>Voltar</button>
+                <a routerLink="/"><i class="fa-solid fa-arrow-left"></i>Voltar</a>
                 <p>Projetos</p>
                 <i class="fa-solid fa-chevron-right"></i>
-                <p>Swift-Cart</p>
+                <p>{{name}}</p>
             </div>
 
-            <h1 class="project-title">Swift-Cart</h1>
+            <h1 class="project-title">{{ name }}</h1>
             <p class="project-description">
-                E-commerce simulation project using ReactJS for the user interface, JavaScript for dynamic functionalities, NodeJS for the backend, ExpressJS for the web server and MySQL for the database. It offers CRUD operations for products, carts and favorites, the main objective of which was to create an intuitive and pleasant online shopping experience.
+                {{ description }}
             </p>
            
             <div class="project-info-cards-container">
                 <div class="project-info-card">
                     <div class="icon-wrapper blue"><i class="fa-solid fa-microchip" style="color: #5829d6;"></i></div>
                     <div>
-                        <p class="project-number">4</p>
+                        <p class="project-number">{{techsQuantity}}</p>
                         <p class="number-description">Tecnologias</p>
                     </div>
                 </div>
                 <div class="project-info-card">
                     <div class="icon-wrapper pink"><i class="fa-solid fa-layer-group" style="color: #e75e98;"></i></div>
                     <div>
-                        <p class="project-number">4</p>
+                        <p class="project-number">{{ featuresQuantity }}</p>
                         <p class="number-description">Funcionalidades</p>
                     </div>
                 </div>
@@ -87,22 +87,9 @@
                     <i class="fa-regular fa-star" style="color: #FFD43B;"></i>      
                     <h3>Funcionalidades</h3>
                 </div>
-
-                <div class="features-wrapper">
+                <div class="features-wrapper" *ngFor="let feature of features">
                     <i class="fa-solid fa-circle" style="color: #e75e98;"></i>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiraesentium? Nostrum.</p>
-                </div>
-                <div class="features-wrapper">
-                    <i class="fa-solid fa-circle" style="color: #e75e98;"></i>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiraesentium? Nostrum.</p>
-                </div>
-                <div class="features-wrapper">
-                    <i class="fa-solid fa-circle" style="color: #e75e98;"></i>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiraesentium? Nostrum.</p>
-                </div>
-                <div class="features-wrapper">
-                    <i class="fa-solid fa-circle" style="color: #e75e98;"></i>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiraesentium? Nostrum.</p>
+                    <p>{{ feature }}</p>
                 </div>
             </div>
         </div>
