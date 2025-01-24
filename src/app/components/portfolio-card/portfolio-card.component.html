@@ -1,12 +1,12 @@
 <div class="portfolio-card">
-    <div class="img-wrapper"><img src="/swift.jpg" alt=""></div>
+    <div class="img-wrapper"><img [src]="name + '.jpg'" alt=""></div>
     <h1>{{name}}</h1>
-    <p>{{description}}</p>
+    <p>{{ description.length > 20 ? (description | slice:0:170) + '...' : description  }}</p>
     <div class="portfolio-card-links">
         <a>Ver Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         <app-button 
         link="/project" 
-        [queryParams]="{name, description, techsQuantity, featuresQuantity, techs: techs.join(','), features: features.join(',')}" 
+        [queryParams]="{name, description, link, techsQuantity, featuresQuantity, techs: techs.join(','), techIcons: techIcons.join(','), features: features.join(',')}" 
         text="Detalhes" 
         icon="fa-solid fa-arrow-right">
     </app-button>

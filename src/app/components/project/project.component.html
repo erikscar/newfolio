@@ -41,47 +41,23 @@
                 </div>
             </div>
             <app-button text="Ver Demo" icon_left="fa-solid fa-arrow-up-right-from-square"></app-button>
-            <app-button text="GitHub" icon_left="fa-brands fa-github"></app-button>
+            <a [href]="link" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
             
             <div class="used-techs-title">
                 <i><i class="fa-solid fa-microchip" style="color: #5829d6;"></i></i>
                 <h3>Tecnologias Utilizadas</h3>
             </div>
             <div class="used-techs-container">
-                <div class="techs">
-                    <div class="icon-wrapper"><i class="fa-brands fa-node"></i></div>
-                    <p>NodeJS</p>
-                </div>
-                <div class="techs">
-                    <div class="icon-wrapper"><i class="fa-brands fa-node"></i></div>
-                    <p>NodeJS</p>
-                </div>  
-                <div class="techs">
-                    <div class="icon-wrapper"><i class="fa-brands fa-node"></i></div>
-                    <p>NodeJS</p>
-                </div>
-                <div class="techs">
-                    <div class="icon-wrapper"><i class="fa-brands fa-node"></i></div>
-                    <p>NodeJS</p>
-                </div>
-                <div class="techs">
-                    <div class="icon-wrapper"><i class="fa-brands fa-node"></i></div>
-                    <p>NodeJS</p>
-                </div>
-                <div class="techs">
-                    <div class="icon-wrapper"><i class="fa-brands fa-node"></i></div>
-                    <p>NodeJS</p>
-                </div>
-                <div class="techs">
-                    <div class="icon-wrapper"><i class="fa-brands fa-node"></i></div>
-                    <p>NodeJS</p>
+                <div class="techs" *ngFor="let tech of techs; let i = index">
+                    <img [src]="techIcons[i]" alt="techIcon">
+                    <p>{{tech}}</p>
                 </div>
             </div>
             
         </div>
 
         <div class="project-features">
-            <img src="/swift.jpg" alt="">
+            <img [src]="name + '.jpg'" alt="">
             <div class="features">
                 <div class="features-title">
                     <i class="fa-regular fa-star" style="color: #FFD43B;"></i>      

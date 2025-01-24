@@ -88,7 +88,16 @@ header {
         }
 
         .project-info {
+             a { 
+                @include borderStyle;
+                padding: .75rem 2rem;
+                border-radius: .5rem;
+                color: #fff;
 
+                i { 
+                    margin-right: .5rem;
+                }
+             }
             .project-title {
                 font-size: 70px;
                 @include textGradient;
@@ -158,14 +167,15 @@ header {
                 justify-content: flex-start;
                 flex-wrap: wrap;
                 max-width: 50rem;
+
                 .techs {
                     @include justifyCenter(.5rem);
                     padding: .5rem 2rem;
                     background-color: rgba(88, 41, 214, 0.2);
                     border-radius: .5rem;
                     border: 1px solid rgba(255, 255, 255, 0.1);
-                    i { 
-                        font-size: 24px;
+                    img{ 
+                        width: 1.5rem;
                     }
 
                     p { 
@@ -179,6 +189,7 @@ header {
 
             img{
                 width: 40rem;
+                border-radius: .5rem
             }
             
             .features-title {
@@ -197,7 +208,7 @@ header {
                 justify-content: flex-start;
 
                 i {
-                    font-size: 14px;
+                    font-size: 10px;
                 }
 
                 p {

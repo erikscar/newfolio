@@ -3,10 +3,12 @@
 
 .portfolio-card {
     background-color: rgba(255, 255, 255, 0.2);
+    border: .5px solid rgba(255, 255, 255, 0.2);
     display: inline-block;
     padding: 1.5rem;
     border-radius: .5rem;
-
+    height: 31rem;
+    
     .img-wrapper {
         text-align: center;
 

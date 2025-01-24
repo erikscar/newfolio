@@ -15,5 +15,15 @@ import { CommonButtonComponent } from "../common-button/common-button.component"
 
 export class PortfolioComponent {
    switcher: string = "projects";
+   baseIconUrl: string = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/"
+   
+   getTechpath(techName: string): string {
+    if(techName === "amazonwebservices"){ 
+      return `${this.baseIconUrl}${techName}/${techName}-plain-wordmark.svg`
+    } else {
+      return `${this.baseIconUrl}${techName}/${techName}-original.svg`
+    }
+    
+}
 
-   }
+}

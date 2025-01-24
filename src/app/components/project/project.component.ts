@@ -13,9 +13,11 @@ import { CommonModule } from '@angular/common';
 export class ProjectComponent implements OnInit {
   name: string = "";
   description: string = "";
+  link: string = "";
   techsQuantity: string = "";
   featuresQuantity: string = "";
   techs: string[] = [];
+  techIcons: string[] = []
   features: string[] = [];
 
   constructor(private route: ActivatedRoute) {}
@@ -24,10 +26,12 @@ export class ProjectComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.name = params['name'];
       this.description = params['description'];
+      this.link = params['link'];
       this.techsQuantity = params['techsQuantity'];
       this.featuresQuantity = params['featuresQuantity'];
-      this.techs = params['techs'] ? params['features'].split(',') : [];;
-      this.features = params['features'] ? params['features'].split(',') : [];;
+      this.techs = params['techs'].split(',')
+      this.techIcons = params['techIcons'].split(',');
+      this.features = params['features'].split(',');
     });
 }
 }
