@@ -14,23 +14,39 @@ import { SocketService } from '../../services/socket.service';
   })
 
   export class ContactComponent implements OnInit {
-    messages: { username: string, newMessage: string, imageLink: string}[]= []
+    messages: { username: string, newMessage: string, imageLink: string, createdAt: string}[]= []
     username: string = '';
     newMessage: string = '';
     imageLink: string = '';
+
     constructor(private socketService: SocketService) {}
 
     ngOnInit(): void {
       this.socketService.on('chatMessage').subscribe((data) => {
+
+        const createdAt = new Date(data.createdAt);
+        createdAt.setHours(createdAt.getHours() - 3)
+
+        const milliseconds = new Date().getTime() - createdAt.getTime()
+        const minutes = milliseconds / (1000 * 60)
+        const hours = minutes / 60;
+
+        if(hours < 1) {
+            data.createdAt =  `${Math.floor(minutes)}min` 
+        } 
+        else {
+          data.createdAt = `${Math.floor(hours)}h ${Math.floor(minutes)}min`
+        } 
         this.messages.push(data)
       })
+
     }
 
     sendMessage(): void {
         this.socketService.emit('chatMessage', {
           username: this.username,
           newMessage: this.newMessage,
-          imageLink: this.imageLink
+          imageLink: this.imageLink,
         });
         this.username = '';
         this.newMessage = '';
@@ -55,5 +71,9 @@ import { SocketService } from '../../services/socket.service';
       this.form.reset()
   }
 
-
+  isImage(url: string): boolean {
+    const image = new Image()
+    image.src = url
+    return image.complete && image.height > 0
+  }
 }

@@ -8,9 +8,12 @@ import { Socket, io } from 'socket.io-client';
 
 export class SocketService {
   private socket: Socket;
+  private serverOffset = 0;
 
   constructor() {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('http://localhost:3000', {
+      auth: { serverOffset: this.serverOffset}
+    });
    }
 
    emit(event: string, data: any) {

@@ -67,7 +67,7 @@
                     <div class="profile-photo">
                         <div class="profile-photo-wrapper">
                             <i class="fa-solid fa-image"></i>
-                            <input [(ngModel)]="imageLink" [ngModelOptions]="{standalone: true}"  type="text" style="background-color: transparent;">
+                            <input placeholder="Insira o URL da sua Imagem" [(ngModel)]="imageLink" [ngModelOptions]="{standalone: true}"  type="text" style="background-color: transparent;">
                         </div>
                     </div>
                     <app-common-button type="submit" text="Postar Comentário" icon="fa-solid fa-paper-plane"></app-common-button>
@@ -76,13 +76,21 @@
 
                 <div class="comments-container">
                     <div class="comment" *ngFor="let msg of messages">
-                        <img [src]="msg.imageLink" alt="">
-                        <div>
-                            <h3>{{ msg.username }}</h3>
-                            <p>{{ msg.newMessage }}!</p>
+                        <div *ngIf="isImage(msg.imageLink); else showDefaultIcon">
+                            <img [src]="msg.imageLink" alt="">
+                        </div>
+                        <ng-template #showDefaultIcon>
+                            <i class="fa-solid fa-user"></i>
+                        </ng-template>
+                        <div class="comment-info">
+                            <div>
+                                <h3>{{ msg.username }}</h3>
+                                <p>{{ msg.newMessage }}!</p>
+                            </div>
+                            <p>{{ msg.createdAt }} Atrás</p>
                         </div>
                     </div>
-                    <p>1 Hora Atrás</p>
+                    
                 </div>
             </div>
         </div>
