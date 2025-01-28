@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "type": "module",
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
@@ -19,7 +20,10 @@
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@emailjs/browser": "^4.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "rxjs": "~7.8.0",
+    "socket.io-client": "^4.8.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
   },

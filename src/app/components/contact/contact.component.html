@@ -51,35 +51,35 @@
                     <h2>Comentários</h2>
                 </div>
 
-                <label for="">Nome</label>
-                <div class="input-wrapper">
-                    <i class="fa-solid fa-user"></i>
-                    <input  type="text" placeholder="Seu Nome">
-                </div>
-
-                <label for="">Mensagem</label>
-                <div class="input-wrapper">
-                    <i class="fa-solid fa-message"></i>
-                    <textarea rows="4"  placeholder="Escreva sua Mensagem Aqui..."></textarea>
-                </div>
-                
-                <label for="">Foto de Perfil</label>
-                <div class="profile-photo">
-                    <div class="profile-photo-wrapper">
-                        <i class="fa-solid fa-image"></i>
-                        <p>Escolher Foto</p>
+                <form (ngSubmit)="sendMessage()"  #chatForm="ngForm">
+                    <label for="">Nome</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}"  placeholder="Seu Nome">
                     </div>
-                </div>
-
-                <app-common-button type="submit" text="Postar Comentário" icon="fa-solid fa-paper-plane"></app-common-button>
+                    <label for="">Mensagem</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-message"></i>
+                        <textarea [(ngModel)]="newMessage" rows="4" [ngModelOptions]="{standalone: true}"  placeholder="Escreva sua Mensagem Aqui..."></textarea>
+                    </div>
+                    
+                    <label for="">Foto de Perfil</label>
+                    <div class="profile-photo">
+                        <div class="profile-photo-wrapper">
+                            <i class="fa-solid fa-image"></i>
+                            <input [(ngModel)]="imageLink" [ngModelOptions]="{standalone: true}"  type="text" style="background-color: transparent;">
+                        </div>
+                    </div>
+                    <app-common-button type="submit" text="Postar Comentário" icon="fa-solid fa-paper-plane"></app-common-button>
+                </form>
                 <hr>
 
                 <div class="comments-container">
-                    <div class="comment">
-                        <i class="fa-solid fa-user"></i>
+                    <div class="comment" *ngFor="let msg of messages">
+                        <img [src]="msg.imageLink" alt="">
                         <div>
-                            <h3>Erik</h3>
-                            <p>Bom Trabalho! Excelente!</p>
+                            <h3>{{ msg.username }}</h3>
+                            <p>{{ msg.newMessage }}!</p>
                         </div>
                     </div>
                     <p>1 Hora Atrás</p>

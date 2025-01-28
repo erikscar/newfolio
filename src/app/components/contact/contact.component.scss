@@ -118,7 +118,7 @@
                 padding: .75rem;
                 margin: .5rem 0;
                 
-                i {
+                i{
                     color: $greyColor;
                 }
             
@@ -164,8 +164,10 @@
                     @include justifyCenter(1rem);
                     justify-content: flex-start;
 
-                    i {
-                        font-size: 30px;
+                    img {
+                        width: 4rem;
+                        height: 4rem;
+                        border-radius: 100%;
                     }
                 }
             }
