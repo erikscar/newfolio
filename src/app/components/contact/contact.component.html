@@ -1,101 +1,68 @@
-    <div id="contact-container">
-        <h1>Contato</h1>
-        <div class="contact-container-wrapper">
-            <div class="getintouch-content">
-                <h2>Entre em Contato</h2>
-                <p class="getintouch-paragraph">Tem algo para discutir? Me mande uma mensagem por email.</p>
-                
-                <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-user"></i>
-                        <input formControlName="from_name" type="text" placeholder="Seu Nome" class="teste">
-                    </div>
-
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input formControlName="from_email" type="text" placeholder="Seu Email">
-                    </div>
-
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-message"></i>
-                        <textarea rows="4" formControlName="message"  placeholder="Sua Mensagem"></textarea>
-                    </div>
-                    
-                    <app-common-button type="submit" text="Enviar Mensagem" icon="fa-solid fa-paper-plane"></app-common-button>
-                </form>
-                
-                <hr>
-                <div class="contact-content-wrapper">
-                    <div class="contact-content">
-                        <p>erikscarcela&#64;gmail.com</p>
-                        <p>+55 (11) 94008-0990</p>
-                        <div class="contact-icons">
-                            <div class="contact-icon-wrapper">
-                                <a href="https://github.com/erikscar" target="_blank">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
-                            <div class="contact-icon-wrapper">
-                                <a href="https://www.linkedin.com/in/erik-scarcela/" target="_blank">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="comments-content">
-                <div class="comments-title-wrapper">
-                    <i class="fa-solid fa-comments"></i>
-                    <h2>Comentários</h2>
-                </div>
-
-                <form (ngSubmit)="sendMessage()"  #chatForm="ngForm">
-                    <label for="">Nome</label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}"  placeholder="Seu Nome">
-                    </div>
-                    <label for="">Mensagem</label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-message"></i>
-                        <textarea [(ngModel)]="newMessage" rows="4" [ngModelOptions]="{standalone: true}"  placeholder="Escreva sua Mensagem Aqui..."></textarea>
-                    </div>
-                    
-                    <label for="">Foto de Perfil</label>
-                    <div class="profile-photo">
-                        <div class="profile-photo-wrapper">
-                            <i class="fa-solid fa-image"></i>
-                            <input placeholder="Insira o URL da sua Imagem" [(ngModel)]="imageLink" [ngModelOptions]="{standalone: true}"  type="text" style="background-color: transparent;">
-                        </div>
-                    </div>
-                    <app-common-button type="submit" text="Postar Comentário" icon="fa-solid fa-paper-plane"></app-common-button>
-                </form>
-                <hr>
-
-                <div class="comments-container">
-                    <div class="comment" *ngFor="let msg of messages">
-                        <div *ngIf="isImage(msg.imageLink); else showDefaultIcon">
-                            <img [src]="msg.imageLink" alt="">
-                        </div>
-                        <ng-template #showDefaultIcon>
-                            <i class="fa-solid fa-user"></i>
-                        </ng-template>
-                        <div class="comment-info">
-                            <div>
-                                <h3>{{ msg.username }}</h3>
-                                <p>{{ msg.newMessage }}!</p>
-                            </div>
-                            <p>{{ msg.createdAt }} Atrás</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+<div id="contact-container">
+  <h1>Contato</h1>
+  <div class="contact-container-wrapper">
+    <div class="getintouch-content">
+      <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
+        <h2>Entre em Contato</h2>
+        <p class="getintouch-paragraph">
+          Tem algo para discutir? Me mande uma mensagem por email.
+        </p>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-user"></i>
+          <input
+            formControlName="from_name"
+            type="text"
+            placeholder="Seu Nome"
+            class="teste"
+          />
         </div>
-        <div class="copyright">
-            <hr>
-            <p>&copy; 2025 Erik Scarcela Araujo. Todos os direitos reservados.</p>
+
+        <div class="input-wrapper">
+          <i class="fa-solid fa-envelope"></i>
+          <input
+            formControlName="from_email"
+            type="text"
+            placeholder="Seu Email"
+          />
         </div>
+
+        <div class="input-wrapper">
+          <i class="fa-solid fa-message"></i>
+          <textarea
+            rows="8"
+            formControlName="message"
+            placeholder="Sua Mensagem"
+          ></textarea>
+        </div>
+
+        <app-common-button
+          type="submit"
+          text="Enviar Mensagem"
+          icon="fa-solid fa-paper-plane"
+        ></app-common-button>
+      </form>
+
+      <div class="contact-info">
+        <i class="fa-solid fa-phone"></i>
+        <p>+55 (11) 9 4008-0990</p>
+      </div>
+      <div class="contact-info">
+        <i class="fa-solid fa-envelope"></i>
+        <p>erikscarcela&#64;gmail.com</p>
+      </div>
+      <hr />
+      <div class="contact-info-social">
+        <div class="info-social-wrapper">
+          <i class="fa-brands fa-github"></i>
+        </div>
+        <div class="info-social-wrapper">
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">
+        &copy;Erik Scarcela Araujo. Todos os Direitos Reservados
+      </p>
     </div>
+  </div>
+</div>
