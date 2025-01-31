@@ -1,220 +1,218 @@
 @import "../../../scss/mixins.scss";
-@import '../../../scss/variables.scss';
+@import "../../../scss/variables.scss";
 
 header {
-    height: 10vh;
-    width: 100%;
-    background-color: #08031a;
+  height: 10vh;
+  width: 100%;
+  background-color: #08031a;
+  display: flex;
+  justify-content: space-around;
+  gap: 27rem;
+  align-items: center;
+
+  img {
+    width: 3.5rem;
+  }
+
+  nav {
     display: flex;
-    justify-content: space-around;
-    gap: 27rem;
-    align-items: center;
-    
-    img {
-       width: 3.5rem; 
+    gap: 2rem;
+    padding-right: 3rem;
+
+    a {
+      color: #fff;
+      font-size: 20px;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 2px;
+        background: $gradient;
+        background-size: 200% 200%;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        animation: border-animate 5s linear infinite;
+      }
     }
 
-    nav {
-        display: flex;
-        gap: 2rem;
-        padding-right: 3rem;
-        
-        a {
-            color: #fff;
-            font-size: 20px;
-            position: relative;
-            display: inline-block;
-
-            &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: -4px; 
-                width: 100%;
-                height: 2px; 
-                background: $gradient;
-                background-size: 200% 200%; 
-                transform: scaleX(0);
-                transform-origin: right; 
-                transition: transform 0.3s ease-in-out; 
-              }
-            
-              &:hover::after {
-                transform: scaleX(1); 
-                animation: border-animate 5s linear infinite; 
-              }
-            }
-            
-            @keyframes border-animate {
-              0% {
-                background-position: 0% 50%;
-              }
-              100% {
-                background-position: 100% 50%;
-              }
-
-        } 
-        
+    @keyframes border-animate {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
     }
+  }
 }
 
-
 .project-container {
-    @include background();
+  @include background();
 
-    .project-container-wrapper {
-        @include justifyCenter(3rem);
-        padding-top: 5rem;
-        .project-path {
-            @include justifyCenter(.5rem);
-            justify-content: flex-start;
-            align-items: center;
+  .project-container-wrapper {
+    @include flex-center();
+    padding-top: 5rem;
+    .project-path {
+      @include flex-center();
+      justify-content: flex-start;
+      align-items: center;
 
-            a {
-                @include borderStyle;
-                border: none;
-                color: #fff;
-                font-size: 16px;
-                padding: .5rem 2rem;
-                margin-right: 1rem;
-                i {
-                    margin-right: .5rem;
-                }
-            }
-
-            i {
-                font-size: 12px;
-            }
+      a {
+        @include borderStyle;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        padding: 0.5rem 2rem;
+        margin-right: 1rem;
+        i {
+          margin-right: 0.5rem;
         }
+      }
 
-        .project-info {
-             a { 
-                @include borderStyle;
-                padding: .75rem 2rem;
-                border-radius: .5rem;
-                color: #fff;
-
-                i { 
-                    margin-right: .5rem;
-                }
-             }
-            .project-title {
-                font-size: 70px;
-                @include textGradient;
-                margin-top: 2rem;
-            }
-
-            .project-description {
-                width: 50rem;
-                margin: 1em 0 2rem 0;
-                font-size: 18px;
-                line-height: 2rem;
-            }
-
-            .project-info-cards-container {
-                @include justifyCenter(1rem);
-
-                .project-info-card {
-                    @include justifyCenter(1rem);
-                    justify-content: flex-start;
-                    width: 50%;
-                    padding: .75rem 1.5rem;
-                    background-color: rgba(255, 255, 255, 0.05);
-                    border-radius: .5rem;
-                    margin-bottom: 1rem;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-
-                    .icon-wrapper {
-                        padding: 1rem;
-                        
-                        border-radius: 100%;
-                    }
-
-                    .pink {
-                        background-color: rgba(231, 94, 152, 0.2);
-                    }
-
-                    .blue {
-                        background-color: rgba(88, 41, 214, 0.2);
-                    }
-
-                    i {
-                        font-size: 28px;
-                    }
-
-                    .project-number {
-                        font-size: 32px;
-                        font-weight: 700;
-                    }
-
-                    .number-description {
-                        color: $greyColor;
-                    }
-                }
-            }
-
-            .used-techs-title {
-                @include justifyCenter(.5rem);
-                justify-content: flex-start;
-                margin: 2rem 0;
-                i, h3 {
-                    font-size: 30px;
-                }
-            }
-
-            .used-techs-container {
-                @include justifyCenter(.75rem);
-                justify-content: flex-start;
-                flex-wrap: wrap;
-                max-width: 50rem;
-
-                .techs {
-                    @include justifyCenter(.5rem);
-                    padding: .5rem 2rem;
-                    background-color: rgba(88, 41, 214, 0.2);
-                    border-radius: .5rem;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    img{ 
-                        width: 1.5rem;
-                    }
-
-                    p { 
-                        font-size: 18px;
-                    }
-                }
-            }
-        }
-
-        .project-features{
-
-            img{
-                width: 40rem;
-                border-radius: .5rem
-            }
-            
-            .features-title {
-                @include justifyCenter(0.5rem);
-                justify-content: flex-start;
-                margin-top: 2rem;
-
-                i, h3 {
-                    font-size: 30px;
-                }
-            }
-
-            .features-wrapper {
-                @include justifyCenter(.5rem);
-                margin-top: 1.5rem;
-                justify-content: flex-start;
-
-                i {
-                    font-size: 10px;
-                }
-
-                p {
-                    font-size: 20px;
-                }
-            }
-        }
+      i {
+        font-size: 12px;
+      }
     }
+
+    .project-info {
+      a {
+        @include borderStyle;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        color: #fff;
+
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+      .project-title {
+        font-size: 70px;
+        @include text-gradient;
+        margin-top: 2rem;
+      }
+
+      .project-description {
+        width: 50rem;
+        margin: 1em 0 2rem 0;
+        font-size: 18px;
+        line-height: 2rem;
+      }
+
+      .project-info-cards-container {
+        @include flex-center();
+
+        .project-info-card {
+          @include flex-center();
+          justify-content: flex-start;
+          width: 50%;
+          padding: 0.75rem 1.5rem;
+          background-color: rgba(255, 255, 255, 0.05);
+          border-radius: 0.5rem;
+          margin-bottom: 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+
+          .icon-wrapper {
+            padding: 1rem;
+
+            border-radius: 100%;
+          }
+
+          .pink {
+            background-color: rgba(231, 94, 152, 0.2);
+          }
+
+          .blue {
+            background-color: rgba(88, 41, 214, 0.2);
+          }
+
+          i {
+            font-size: 28px;
+          }
+
+          .project-number {
+            font-size: 32px;
+            font-weight: 700;
+          }
+
+          .number-description {
+            color: $greyColor;
+          }
+        }
+      }
+
+      .used-techs-title {
+        @include flex-center();
+        justify-content: flex-start;
+        margin: 2rem 0;
+        i,
+        h3 {
+          font-size: 30px;
+        }
+      }
+
+      .used-techs-container {
+        @include flex-center();
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        max-width: 50rem;
+
+        .techs {
+          @include flex-center();
+          padding: 0.5rem 2rem;
+          background-color: rgba(88, 41, 214, 0.2);
+          border-radius: 0.5rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          img {
+            width: 1.5rem;
+          }
+
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .project-features {
+      img {
+        width: 40rem;
+        border-radius: 0.5rem;
+      }
+
+      .features-title {
+        @include flex-center();
+        justify-content: flex-start;
+        margin-top: 2rem;
+
+        i,
+        h3 {
+          font-size: 30px;
+        }
+      }
+
+      .features-wrapper {
+        @include flex-center();
+        margin-top: 1.5rem;
+        justify-content: flex-start;
+
+        i {
+          font-size: 10px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }

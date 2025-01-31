@@ -1,87 +1,84 @@
 @import "../../../scss/mixins";
 @import "../../../scss/variables";
 
-
 #aboutme-container {
-    @include background();
+  @include background();
 
-    h1 {
-        text-align: center;
-        @include textGradient;
-        padding-top: 6rem;
-        font-size: 48px
+  h1 {
+    text-align: center;
+    @include text-gradient;
+    padding-top: 6rem;
+    font-size: 48px;
+  }
+
+  .aboutme-content-wrapper {
+    @include flex-center();
+  }
+
+  .aboutme-content {
+    h2 {
+      font-size: 36px;
+      font-weight: 900;
     }
 
-    .aboutme-content-wrapper {
-        @include justifyCenter(15rem);
+    h3 {
+      font-size: 48px;
+      @include text-gradient;
     }
-
-    .aboutme-content {
-        h2 {
-            font-size: 36px;
-            font-weight: 900;
-        }
-        
-        h3 {
-            font-size: 48px;
-            @include textGradient;
-        }
-        p {
-            width: 45rem;
-            margin-bottom: 1rem;
-            color: $greyColor;
-        }
+    p {
+      width: 45rem;
+      margin-bottom: 1rem;
+      color: $greyColor;
     }
+  }
 
-    img {
-        width: 30rem;
-        height: 30rem;
+  img {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 100%;
+    box-shadow: 0 0 30px 1px #5829d6;
+  }
+
+  .aboutme-cards-container {
+    @include flex-center();
+    margin-top: 5rem;
+
+    .cards {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 0.5px solid rgba(255, 255, 255, 0.2);
+      padding: 2rem;
+      width: 29rem;
+      border-radius: 0.5rem;
+
+      .icon-wrapper {
+        padding: 0.75rem;
+        background-color: rgba(255, 255, 255, 0.2);
         border-radius: 100%;
-        box-shadow: 0 0 30px 1px #5829D6;
+        display: inline-block;
 
-    }
-
-    .aboutme-cards-container {
-        @include justifyCenter(1rem);
-        margin-top: 5rem;
-
-        .cards {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: .5px solid rgba(255, 255, 255, 0.2);
-            padding: 2rem;
-            width: 29rem;
-            border-radius: .5rem;
-
-            .icon-wrapper {
-            padding: .75rem;
-            background-color: rgba(255, 255, 255, 0.2);         
-            border-radius: 100%;
-            display: inline-block;
-
-            i {
-                font-size: 24px;
-            }
-         }
-
-         .card-section {
-            @include justifyCenter(0);
-            justify-content: space-between;
-
-            .section-number {
-                font-size: 40px;
-                font-weight: 900;
-            }
-
-            .section-title {
-                margin: 1.25rem 0 .5rem 0;
-                font-size: 20px;
-            }
-
-            .section-paragraph {
-                font-size: 12px;
-            }
-
-         }
+        i {
+          font-size: 24px;
         }
+      }
+
+      .card-section {
+        @include flex-center();
+        justify-content: space-between;
+
+        .section-number {
+          font-size: 40px;
+          font-weight: 900;
+        }
+
+        .section-title {
+          margin: 1.25rem 0 0.5rem 0;
+          font-size: 20px;
+        }
+
+        .section-paragraph {
+          font-size: 12px;
+        }
+      }
     }
+  }
 }
