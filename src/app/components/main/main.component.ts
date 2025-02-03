@@ -1,13 +1,10 @@
 import { Component, HostListener } from '@angular/core';
 import { HomeComponent } from "../home/home.component";
-import { AboutmeComponent } from "../aboutme/aboutme.component";
-import { PortfolioComponent } from "../portfolio/portfolio.component";
-import { ContactComponent } from "../contact/contact.component";
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [HomeComponent, AboutmeComponent, PortfolioComponent, ContactComponent],
+  imports: [HomeComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
