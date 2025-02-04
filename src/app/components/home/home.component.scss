@@ -4,48 +4,121 @@
 #home-container {
   @include background();
   @include flex-center();
-  gap: 3rem;
+
+  padding: 2rem;
+  text-align: center;
+  flex-direction: column-reverse;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 1024px) {
+    text-align: start;
+  }
 
   img {
-    width: 45rem;
+    width: 18rem;
+
+    @media (min-width: 500px) {
+      width: 30rem;
+    }
+
+    @media (min-width: 768px) {
+      width: 25rem;
+    }
+
+    @media (min-width: 1024px) {
+      width: 30rem;
+    }
+
+    @media (min-width: 1280px) {
+      width: 40rem;
+    }
   }
 
   .home-content {
     h1 {
-      font-size: 4rem;
+      font-size: 2rem;
+
+      @media (min-width: 1024px) {
+        font-size: 3.5rem;
+      }
     }
 
     h2 {
       @include text-gradient;
-      font-size: 6rem;
+      font-size: 2.5rem;
+
+      @media (min-width: 1024px) {
+        font-size: 4rem;
+      }
     }
 
     p {
-      width: 40rem;
-      font-weight: bold;
-      margin: 1rem 0;
-      line-height: 1.75rem;
+      width: auto;
+      font-size: 0.8rem;
+      line-height: 1.25rem;
+      margin-top: 1rem;
+
+      @media (min-width: 500px) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+
+      @media (min-width: 1280px) {
+        width: 40rem;
+      }
 
       span {
         @include text-gradient;
-        font-size: 1.5rem;
+        font-size: 1rem;
+
+        @media (min-width: 500px) {
+          font-size: 1.5rem;
+        }
       }
     }
   }
 
   a {
     @include link-btn;
+
+    @media (min-width: 500px) {
+      font-size: 1rem;
+      padding: 0.75rem 2rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 0.85rem;
+      padding: 0.75rem 1.5rem;
+    }
+
+    @media (min-width: 1025px) {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+    }
   }
 
   .social-icons {
-    margin-top: 1rem;
-
     a {
-      font-size: 2rem;
-      padding: 0.75rem 1.25rem;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
 
       i {
         margin: 0;
+      }
+
+      @media (min-width: 500px) {
+        font-size: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 2rem;
       }
     }
   }

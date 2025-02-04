@@ -1,4 +1,11 @@
-$gradient: linear-gradient(90deg, #5829d6 25%,#e75e98 50%,#5829d6 75%);
-$whiteColor: #f3eded;
-$greyColor:  #a4a4a4;
+$primary-color: #e75e98;
+$secondary-color: #5829d6;
+$white-color: #f3eded;
+$grey-color: #a4a4a4;
 
+$gradient: linear-gradient(
+  90deg,
+  $secondary-color 25%,
+  $primary-color 50%,
+  $secondary-color 75%
+);
