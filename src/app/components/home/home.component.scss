@@ -17,6 +17,11 @@
     text-align: start;
   }
 
+  @media (max-width: 425px) {
+    text-align: center;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
   img {
     width: 18rem;
 
@@ -70,6 +75,12 @@
         width: 40rem;
       }
 
+      @media (max-width: 425px) {
+        width: auto;
+        font-size: 0.9rem;
+        line-height: 1.25rem;
+      }
+
       span {
         @include text-gradient;
         font-size: 1rem;
@@ -104,6 +115,11 @@
     a {
       font-size: 1.5rem;
       padding: 0.5rem 1rem;
+
+      @media (max-width: 425px) {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+      }
 
       i {
         margin: 0;
