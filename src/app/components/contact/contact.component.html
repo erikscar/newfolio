@@ -1,68 +1,48 @@
 <div id="contact-container">
   <h1>Contato</h1>
-  <div class="contact-container-wrapper">
-    <div class="getintouch-content">
-      <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
-        <h2>Entre em Contato</h2>
-        <p class="getintouch-paragraph">
-          Tem algo para discutir? Me mande uma mensagem por email.
-        </p>
-        <div class="input-wrapper">
-          <i class="fa-solid fa-user"></i>
-          <input
-            formControlName="from_name"
-            type="text"
-            placeholder="Seu Nome"
-            class="teste"
-          />
-        </div>
-
-        <div class="input-wrapper">
-          <i class="fa-solid fa-envelope"></i>
-          <input
-            formControlName="from_email"
-            type="text"
-            placeholder="Seu Email"
-          />
-        </div>
-
-        <div class="input-wrapper">
-          <i class="fa-solid fa-message"></i>
-          <textarea
-            rows="8"
-            formControlName="message"
-            placeholder="Sua Mensagem"
-          ></textarea>
-        </div>
-
-        <app-common-button
-          type="submit"
-          text="Enviar Mensagem"
-          icon="fa-solid fa-paper-plane"
-        ></app-common-button>
-      </form>
-
-      <div class="contact-info">
-        <i class="fa-solid fa-phone"></i>
-        <p>+55 (11) 9 4008-0990</p>
+  <p class="getintouch-paragraph">
+    Tem algo para discutir? Me mande uma mensagem por email.
+  </p>
+  <div class="getintouch-content">
+    <form [formGroup]="form" action="javascript:void(0)" (submit)="send()">
+      <div class="input-wrapper">
+        <i class="fa-solid fa-user"></i>
+        <input formControlName="from_name" type="text" placeholder="Seu Nome" class="teste" />
       </div>
-      <div class="contact-info">
+
+      <div class="input-wrapper">
         <i class="fa-solid fa-envelope"></i>
-        <p>erikscarcela&#64;gmail.com</p>
+        <input formControlName="from_email" type="text" placeholder="Seu Email" />
       </div>
-      <hr />
-      <div class="contact-info-social">
-        <div class="info-social-wrapper">
-          <i class="fa-brands fa-github"></i>
-        </div>
-        <div class="info-social-wrapper">
-          <i class="fa-brands fa-linkedin"></i>
-        </div>
+
+      <div class="input-wrapper">
+        <i class="fa-solid fa-message"></i>
+        <textarea rows="8" formControlName="message" placeholder="Sua Mensagem"></textarea>
       </div>
-      <hr />
-      <p class="copyright">
-        &copy;Erik Scarcela Araujo. Todos os Direitos Reservados
-      </p>
+
+      <button type="submit">Enviar Mensagem <i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+
+    <div class="contact-info">
+      <i class="fa-solid fa-phone"></i>
+      <p>+55 (11) 9 4008-0990</p>
     </div>
+    <div class="contact-info">
+      <i class="fa-solid fa-envelope"></i>
+      <p>erikscarcela&#64;gmail.com</p>
+    </div>
+    <hr />
+    <div class="social-icon-container">
+      <div class="social-icon-wrapper">
+        <i class="fa-brands fa-github"></i>
+      </div>
+      <div class="social-icon-wrapper">
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+    </div>
+    <hr />
   </div>
+  <p class="copyright">
+    &copy; Erik Scarcela Araujo. Todos os Direitos Reservados
+  </p>
 </div>

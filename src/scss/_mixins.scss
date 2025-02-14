@@ -70,6 +70,26 @@
   }
 }
 
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 481px) {
+      @content;
+    }
+  } @else if $breakpoint == laptop {
+    @media (min-width: 769px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  } @else if $breakpoint == large-desktop {
+    @media (min-width: 1441px) {
+      @content;
+    }
+  }
+}
+
 @mixin borderStyle {
   border: none;
   position: relative;
@@ -113,8 +133,12 @@
   }
 }
 
-@mixin animatedGradientButton {
-  padding: 0.75rem 2.5rem;
+@mixin animated-btn {
+  @include flex-center();
+  width: 100%;
+  font-size: 0.75rem;
+  margin: 1rem auto;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
@@ -127,7 +151,10 @@
   );
   animation: gradientAnimation 4s ease infinite;
   color: #fff;
-  margin-right: 1rem;
+
+  i {
+    margin-left: 0.5rem;
+  }
 }
 
 @keyframes border-animate {

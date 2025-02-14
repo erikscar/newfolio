@@ -3,97 +3,124 @@
 
 #contact-container {
   @include background();
+  @include flex-center();
+  flex-direction: column;
 
   h1 {
     @include text-gradient;
-    text-align: center;
-    font-size: 48px;
+    font-size: 2.5rem;
     padding-top: 6rem;
+
+    @include responsive(laptop) {
+      font-size: 3rem;
+    }
   }
 
-  .contact-container-wrapper {
-    @include flex-center();
-    margin-top: 2rem;
+  .getintouch-paragraph {
+    color: $grey-color;
+    text-align: center;
+  }
 
-    .getintouch-content {
+  .getintouch-content {
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    width: 95%;
+
+    h2 {
+      color: $secondary-color;
+    }
+
+    .input-wrapper {
+      @include flex-center();
+      align-items: flex-start;
+      gap: 0.5rem;
       background-color: rgba(255, 255, 255, 0.1);
-      border: 0.5px solid rgba(255, 255, 255, 0.2);
-      padding: 2rem;
+      margin: 0.5rem 0;
+      padding: 1rem;
       border-radius: 0.5rem;
 
-      h2 {
-        @include text-gradient;
-        font-size: 32px;
+      input,
+      textarea {
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        width: 100%;
+
+        &::placeholder {
+          color: $grey-color;
+        }
       }
 
-      .getintouch-paragraph {
-        color: $greyColor;
-        margin-top: 1rem;
+      i {
+        color: $grey-color;
       }
+    }
 
-      .input-wrapper {
-        @include flex-center();
-        align-items: flex-start;
+    button {
+      @include animated-btn();
+    }
 
-        background-color: rgba(255, 255, 255, 0.2);
-        border: 0.5px solid rgba(255, 255, 255, 0.2);
-        border-radius: 0.25rem;
-        padding: 0.75rem;
-        margin: 0.75rem 0;
+    .contact-info {
+      @include flex-center();
+      gap: 0.5rem;
+      margin: 1rem 0;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+
+      p,
+      i {
+        color: $grey-color;
+      }
+    }
+
+    hr {
+      border: 0.5px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .social-icon-container {
+      @include flex-center();
+      gap: 1rem;
+      margin: 1rem 0;
+
+      .social-icon-wrapper {
+        padding: 0.75rem 1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 100%;
 
         i {
-          color: $greyColor;
-        }
+          font-size: 1.75rem;
 
-        textarea,
-        input {
-          border: none;
-          width: 100%;
-          background-color: transparent;
-          outline: none;
-
-          &::placeholder {
-            color: $greyColor;
+          @include responsive(tablet) {
+            font-size: 2.25rem;
           }
         }
-      }
 
-      .contact-info {
-        @include flex-center();
-        gap: 2rem;
-        margin: 1.5rem 0;
-        font-size: 18px;
-        p,
-        i {
-          color: $greyColor;
-        }
-        i {
-          font-size: 22px;
+        @include responsive(tablet) {
+          padding: 1rem 1.25rem;
         }
       }
+    }
 
-      .contact-info-social {
-        @include flex-center();
+    @include responsive(laptop) {
+      width: 30rem;
+    }
+  }
 
-        .info-social-wrapper {
-          @include borderStyle;
-          padding: 1.25rem 1.5rem;
-          background-color: rgba(255, 255, 255, 0.1);
-          border-radius: 100%;
-          i {
-            font-size: 40px;
-          }
-        }
-      }
+  .copyright {
+    text-align: center;
+    margin-top: 1rem;
+    color: $grey-color;
+    font-size: 0.75rem;
 
-      .copyright {
-        text-align: center;
-        color: $greyColor;
-      }
-      hr {
-        margin: 2rem 0;
-        border: 0.5px solid rgba(255, 255, 255, 0.2);
-      }
+    @include responsive(tablet) {
+      font-size: 1rem;
+    }
+
+    @include responsive(laptop) {
+      margin-top: 2rem;
     }
   }
 }
